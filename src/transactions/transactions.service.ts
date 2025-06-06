@@ -45,6 +45,7 @@ export class TransactionsService {
           const discount = (coupon.percentage / 100) * total;
           transaction.discount = discount;
           transaction.coupon = coupon.name;
+          transaction.total -= discount;
         }
 
         for (const contents of createTransactionDto.contents) {
